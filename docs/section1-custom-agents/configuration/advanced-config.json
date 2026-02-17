@@ -1,0 +1,149 @@
+{
+  "agent": {
+    "name": "Enterprise Agent",
+    "version": "2.1.0",
+    "description": "Agent aziendale con funzionalità avanzate",
+    "type": "specialized",
+    "license": "enterprise"
+  },
+  "settings": {
+    "temperature": 0.5,
+    "max_tokens": 4000,
+    "response_format": "markdown",
+    "language": "it-IT",
+    "streaming": true,
+    "context_window": 8000
+  },
+  "capabilities": [
+    "code_generation",
+    "code_review",
+    "refactoring",
+    "testing",
+    "documentation",
+    "security_analysis",
+    "performance_optimization"
+  ],
+  "tools": [
+    {
+      "name": "linter",
+      "enabled": true,
+      "config": {
+        "rules": "strict",
+        "auto_fix": false
+      }
+    },
+    {
+      "name": "formatter",
+      "enabled": true,
+      "config": {
+        "style": "prettier"
+      }
+    },
+    {
+      "name": "security_scanner",
+      "enabled": true,
+      "config": {
+        "severity_threshold": "medium",
+        "scan_dependencies": true
+      }
+    }
+  ],
+  "knowledge_base": {
+    "sources": [
+      "knowledge/fundamentals/",
+      "knowledge/guides/",
+      "knowledge/reference/",
+      "knowledge/examples/"
+    ],
+    "update_frequency": "daily",
+    "priority_topics": [
+      "security",
+      "performance",
+      "scalability"
+    ],
+    "external_sources": [
+      {
+        "type": "api",
+        "url": "https://api.example.com/docs",
+        "auth": "bearer_token"
+      }
+    ]
+  },
+  "integrations": {
+    "github": {
+      "enabled": true,
+      "features": [
+        "pull_requests",
+        "issues",
+        "actions"
+      ]
+    },
+    "jira": {
+      "enabled": true,
+      "url": "https://company.atlassian.net"
+    },
+    "slack": {
+      "enabled": true,
+      "webhook_url": "${SLACK_WEBHOOK}",
+      "notifications": true
+    }
+  },
+  "triggers": {
+    "keywords": [
+      "review",
+      "optimize",
+      "refactor",
+      "secure",
+      "test"
+    ],
+    "file_patterns": [
+      "*.js",
+      "*.ts",
+      "*.tsx",
+      "*.py",
+      "*.java",
+      "*.go"
+    ],
+    "events": [
+      "pull_request",
+      "commit",
+      "comment"
+    ]
+  },
+  "filters": {
+    "include_paths": [
+      "src/**",
+      "lib/**",
+      "tests/**"
+    ],
+    "exclude_paths": [
+      "node_modules/**",
+      "dist/**",
+      "build/**",
+      "*.min.js"
+    ]
+  },
+  "security": {
+    "enable_secrets_detection": true,
+    "enable_vulnerability_scanning": true,
+    "compliance_rules": [
+      "OWASP",
+      "GDPR",
+      "SOC2"
+    ]
+  },
+  "performance": {
+    "cache_enabled": true,
+    "cache_ttl": 3600,
+    "batch_processing": true,
+    "rate_limiting": {
+      "requests_per_minute": 60
+    }
+  },
+  "logging": {
+    "level": "info",
+    "format": "json",
+    "destination": "cloudwatch",
+    "retention_days": 30
+  }
+}

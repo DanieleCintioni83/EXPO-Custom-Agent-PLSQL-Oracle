@@ -1,0 +1,38 @@
+{
+  "agent": {
+    "name": "Basic Helper Agent",
+    "version": "1.0.0",
+    "description": "Un agent semplice per assistenza di base",
+    "type": "assistant"
+  },
+  "settings": {
+    "temperature": 0.7,
+    "max_tokens": 2000,
+    "response_format": "markdown",
+    "language": "it-IT"
+  },
+  "capabilities": [
+    "code_review",
+    "documentation",
+    "best_practices"
+  ],
+  "knowledge_base": {
+    "sources": [
+      "knowledge/basics.md",
+      "knowledge/faq.md"
+    ],
+    "update_frequency": "weekly"
+  },
+  "triggers": {
+    "keywords": [
+      "help",
+      "assist",
+      "review"
+    ],
+    "file_patterns": [
+      "*.js",
+      "*.ts",
+      "*.py"
+    ]
+  }
+}
