@@ -1,0 +1,77 @@
+{
+  "agent": {
+    "name": "Oracle Query Assistant",
+    "version": "1.0.0",
+    "description": "Agent per assistenza nella creazione e ottimizzazione di query SQL per Oracle Database",
+    "type": "database-sql"
+  },
+  "settings": {
+    "temperature": 0.3,
+    "max_tokens": 3000,
+    "response_format": "markdown",
+    "language": "it-IT"
+  },
+  "database": {
+    "type": "oracle",
+    "supported_versions": ["11g", "12c", "18c", "19c", "21c"],
+    "features": [
+      "SQL",
+      "query_optimization",
+      "execution_plans",
+      "indexing"
+    ]
+  },
+  "tools": [
+    {
+      "name": "oracle-sql-developer",
+      "enabled": true,
+      "config": {
+        "auto_format": true,
+        "syntax_check": true,
+        "explain_plan": true
+      }
+    },
+    {
+      "name": "dbcode",
+      "enabled": true,
+      "config": {
+        "intellisense": true,
+        "auto_complete": true,
+        "table_suggestions": true
+      }
+    }
+  ],
+  "knowledge_base": {
+    "sources": [
+      "knowledge/common-queries.md",
+      "knowledge/performance-tuning.md",
+      "knowledge/sql-patterns.md"
+    ],
+    "update_frequency": "weekly",
+    "priority_topics": [
+      "performance",
+      "optimization",
+      "best_practices"
+    ]
+  },
+  "capabilities": [
+    "sql_generation",
+    "query_optimization",
+    "index_suggestions",
+    "execution_plan_analysis",
+    "sql_dialect_conversion"
+  ],
+  "triggers": {
+    "keywords": [
+      "query",
+      "select",
+      "optimize",
+      "index",
+      "performance"
+    ],
+    "file_patterns": [
+      "*.sql",
+      "*.ddl"
+    ]
+  }
+}

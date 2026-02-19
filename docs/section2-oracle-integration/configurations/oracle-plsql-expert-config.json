@@ -1,0 +1,134 @@
+{
+  "agent": {
+    "name": "Oracle PL/SQL Expert",
+    "version": "2.0.0",
+    "description": "Agent avanzato per sviluppo, analisi e ottimizzazione di codice PL/SQL",
+    "type": "database-plsql"
+  },
+  "settings": {
+    "temperature": 0.4,
+    "max_tokens": 4000,
+    "response_format": "markdown",
+    "language": "it-IT",
+    "context_window": 8000
+  },
+  "database": {
+    "type": "oracle",
+    "supported_versions": ["11g", "12c", "18c", "19c", "21c"],
+    "features": [
+      "PL/SQL",
+      "stored_procedures",
+      "functions",
+      "packages",
+      "triggers",
+      "collections",
+      "bulk_operations",
+      "dynamic_sql"
+    ]
+  },
+  "tools": [
+    {
+      "name": "oracle-sql-developer",
+      "enabled": true,
+      "config": {
+        "plsql_debugging": true,
+        "plsql_formatting": {
+          "enabled": true,
+          "indent_size": 2,
+          "case_keywords": "upper"
+        },
+        "warnings_enabled": true,
+        "compiler_hints": true
+      }
+    },
+    {
+      "name": "dbcode",
+      "enabled": true,
+      "config": {
+        "plsql_intellisense": true,
+        "format_on_save": true,
+        "linting": true,
+        "code_snippets": true
+      }
+    },
+    {
+      "name": "code_analyzer",
+      "enabled": true,
+      "config": {
+        "static_analysis": true,
+        "complexity_metrics": true,
+        "security_scanning": true
+      }
+    }
+  ],
+  "knowledge_base": {
+    "sources": [
+      "knowledge/plsql-best-practices.md",
+      "knowledge/plsql-patterns.md",
+      "knowledge/performance-optimization.md",
+      "knowledge/exception-handling.md",
+      "knowledge/testing-patterns.md"
+    ],
+    "update_frequency": "weekly",
+    "priority_topics": [
+      "performance",
+      "security",
+      "best_practices",
+      "testing",
+      "exception_handling"
+    ]
+  },
+  "capabilities": [
+    "plsql_development",
+    "code_analysis",
+    "performance_optimization",
+    "exception_handling",
+    "bulk_operations",
+    "testing",
+    "debugging",
+    "refactoring"
+  ],
+  "code_quality": {
+    "enforce_naming_conventions": true,
+    "require_exception_handling": true,
+    "suggest_bulk_operations": true,
+    "validate_input": true,
+    "security_checks": true
+  },
+  "triggers": {
+    "keywords": [
+      "procedure",
+      "function",
+      "package",
+      "trigger",
+      "plsql",
+      "bulk",
+      "optimize"
+    ],
+    "file_patterns": [
+      "*.pls",
+      "*.plb",
+      "*.pck",
+      "*.pkb",
+      "*.trg",
+      "*.fnc",
+      "*.prc"
+    ]
+  },
+  "best_practices": {
+    "naming_conventions": {
+      "parameters": "p_",
+      "local_variables": "l_",
+      "global_variables": "g_",
+      "constants": "c_",
+      "exceptions": "e_",
+      "types": "t_"
+    },
+    "code_standards": {
+      "max_procedure_lines": 200,
+      "max_complexity": 10,
+      "require_comments": true,
+      "require_error_handling": true
+    }
+  }
+}
